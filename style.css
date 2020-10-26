@@ -48,7 +48,7 @@ a {
 #welcome {
   text-align: center;
   min-height: 100vh;
-  background: url(./backimg.png) center center/cover no-repeat;
+  background: url(./backimg.png) center center/contain no-repeat;
 }
 
 #about-us {
