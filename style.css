@@ -95,8 +95,8 @@ a {
 }
 
 #about-us li h1 {
-
   font-size: 1.6em;
+
   margin-bottom: .8em;
 }
 
@@ -135,8 +135,7 @@ a {
 #welcome-text h1 {
   font-size: 7em;
   color: #fff;
-  -webkit-text-stroke: #444;
-  -webkit-text-stroke-width: 2px;
+  letter-spacing: -.125em;
   background: url(./heading-pointer.svg) center center/contain no-repeat;
 }
 
