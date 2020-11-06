@@ -7,6 +7,16 @@
     <title>Annotate</title>
   </head>
   <body>
+    <div id="register" class="modal">
+      <div class="frame-container">
+        <i class="fas fa-times-circle close-icon"></i>
+        <iframe
+          id="google-form"
+          src="https://bit.ly/3l53I9u"
+          frameborder="0"
+        ></iframe>
+      </div>
+    </div>
     <section class="flex-wrapper" id="main-links">
       <img
         width="50px"
@@ -62,7 +72,7 @@
           <p style="margin-bottom: 2rem; color: #444444">Phase One: Ideation</p>
         </hgroup>
         <div style="margin: auto">
-          <a href="" class="btn">Apply now</a>
+          <a href="#register" class="btn">Apply now</a>
           <img src="./button-pointer.svg" alt="" srcset="" />
           <a href="#about-us" class="btn btn-secondary">Read more</a>
         </div>
@@ -146,7 +156,9 @@
             </p>
           </li>
         </ol>
-        <a style="margin-top: 1rem" href="" class="btn">REGISTER NOW</a>
+        <a style="margin-top: 1rem" href="#register" class="btn"
+          >REGISTER NOW</a
+        >
       </section>
       <a class="pendulam-vertical" style="margin-top: 2rem" href="#phases">
         <img src="./read more.svg" alt="" />
@@ -220,7 +232,7 @@
               background-color: #444;
               border: #444 4px solid;
             "
-            href=""
+            href="#register"
             class="btn"
             >REGISTER NOW</a
           >
@@ -284,5 +296,27 @@
       src="https://kit.fontawesome.com/4eec0e39bb.js"
       crossorigin="anonymous"
     ></script>
+    <script>
+      const registerBtns = document.querySelectorAll('a[href="#register"]');
+      const modal = document.querySelector('div[id="register"]');
+      const closeBtn = document.querySelector(".close-icon");
+
+      registerBtns.forEach((btn) => {
+        btn.addEventListener("click", (event) => {
+          event.preventDefault();
+          modal.classList.add("visible");
+        });
+      });
+
+      modal.addEventListener("click", (event) => {
+        if (event.target.classList.contains("visible"))
+          modal.classList.remove("visible");
+      });
+
+      closeBtn.addEventListener("click", (event) => {
+        if (modal.classList.contains("visible"))
+          modal.classList.remove("visible");
+      });
+    </script>
   </body>
 </html>
