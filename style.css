@@ -160,6 +160,8 @@ a {
 #phases p {
   line-height: 1.6rem;
   font-size: 1rem;
+  max-width: 800px;
+  margin: auto;
   margin-bottom: 3rem;
 }
 
@@ -231,6 +233,13 @@ a {
   color: #444;
 
   font-family: 'Google sans', sans-serif;
+}
+
+@media (max-width:600px) {
+
+  #welcome-text {
+    margin-top: 5rem;
+  }
 }
 
 #welcome-text h2 {
