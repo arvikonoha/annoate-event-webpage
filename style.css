@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
 
 html {
   scroll-behavior: smooth;
@@ -51,6 +52,117 @@ a {
   background: url(./backimg.png) center center/contain no-repeat;
 }
 
+#phases {
+  flex-wrap: wrap;
+  font-family: 'Google sans', sans-serif;
+
+}
+
+#phases .phase {
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  padding: 4vmax;
+  cursor: pointer;
+}
+
+#timer {
+  max-width: 640px;
+  margin: 1vmax auto;
+  justify-content: center;
+}
+
+
+
+#phases .phase figure {
+  flex: 1 0 4vmax;
+  margin: 4px;
+  position: relative;
+}
+
+
+#phases .phase .caption {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+
+#phases .phase figcaption .value {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, 0);
+
+  color: #fff;
+  font-size: 5vmax;
+  font-weight: bold;
+}
+
+
+
+
+#phases .phase figcaption .label {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%, 0);
+
+  color: #ffffff41;
+  font-size: 1vmax;
+  font-weight: bold;
+}
+
+@media (max-width:900px) {
+  #timer {
+    width: 100%;
+  }
+
+  #phases .phase figcaption .value {
+    font-size: 10vmin;
+  }
+
+  #phases .phase figcaption .label {
+    font-size: 2vmin;
+  }
+}
+
+#phases .phase>img:first-child {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: transform .5s ease-out;
+}
+
+#phases .phase:hover>img:first-child {
+  transform: scale(1.1);
+}
+
+#phases .phase:nth-child(1) {
+  background: linear-gradient(#ffffffbb 40%, #ffffff07);
+  color: #444;
+}
+
+
+#phases h1 {
+  letter-spacing: -0.4vmax;
+  font-size: 5vmax;
+  margin-bottom: 1vmax;
+}
+
+#phases p {
+  line-height: 3vmax;
+  font-size: 1.2vmax;
+  margin-bottom: 4rem;
+}
+
 #about-us {
   min-height: 100vh;
   padding-top: 14rem;
@@ -90,8 +202,11 @@ a {
   padding: 1rem;
 }
 
-#about-us h1 {
-  font-size: 2.4em;
+#about-us #about-description>h1 {
+  font-size: 4rem;
+  -webkit-text-fill-color: #fff;
+  -webkit-text-stroke-color: #29aee8;
+  -webkit-text-stroke-width: 2px;
 }
 
 #about-us li h1 {
@@ -112,7 +227,7 @@ a {
 }
 
 #welcome-text {
-  margin-top: 3rem;
+
   color: #444;
 
   font-family: 'Google sans', sans-serif;
@@ -166,6 +281,7 @@ a {
   border-radius: 50px;
   background-color: #29AEE8;
   color: #fff;
+  border: #29AEE8 4px solid;
   text-transform: uppercase;
   font-weight: bold;
   transition: .2s ease transform;
@@ -227,7 +343,7 @@ a {
 }
 
 #rules>h1 {
-  font-size: 5rem;
+  font-size: 4rem;
   color: #444;
   margin-bottom: 3rem;
   font-family: 'Google sans', sans-serif;
@@ -251,17 +367,13 @@ a {
     padding: 2rem;
   }
 
-  #rules>h1 {
-    font-size: 3rem;
-  }
-
-
   #rules>ul li>ul {
     padding-left: 1rem;
   }
 }
 
 #rules>ul li {
+  font-size: 1.2rem;
   list-style: none;
   line-height: 1.6rem;
 }
