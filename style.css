@@ -498,12 +498,6 @@ a {
   width: 100vw;
 }
 
-@media(max-width:600px) {
-
-  .modal {
-    padding: 0;
-  }
-}
 
 .frame-container {
   position: relative;
@@ -514,6 +508,19 @@ a {
   padding: 3rem 1rem;
 
   background-color: #ffdba6;
+}
+
+
+@media(max-width:600px) {
+
+  .modal {
+    padding: 0;
+  }
+
+
+  .frame-container {
+    height: 100vh;
+  }
 }
 
 .close-icon {
