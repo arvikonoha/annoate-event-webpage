@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Register</title>
+  </head>
+  <body>
+    <section id="steps">
+      <div id="register" class="modal">
+        <div class="frame-container">
+          <i class="fas fa-times-circle close-icon"></i>
+          <iframe
+            id="google-form"
+            src="https://forms.gle/pbTcbTXU2pvzGady7"
+            frameborder="0"
+          ></iframe>
+        </div>
+      </div>
+      <div class="step-container">
+        <h1>Steps to register</h1>
+        <ul>
+          <li class="step">
+            <h1>Registeration</h1>
+            <p>
+              Register to the event in the Developer Student Clubs web site.
+              This is neede for us to keep track of the number of participants
+            </p>
+            <a target="_blank" href="/register.html" class="btn">REGISTER</a>
+          </li>
+          <li class="step">
+            <h1>Submission of idea</h1>
+            <p>Submit your ideas by entering relavant details of the same.</p>
+            <a href="#register" class="btn">SUBMIT</a>
+          </li>
+          <li class="step">
+            <h1>Fingers crossed</h1>
+            <p>
+              That's it! Wait for the results of the event which will be updated
+              after 15th of this month.
+            </p>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <script
+      src="https://kit.fontawesome.com/4eec0e39bb.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      window.FontAwesomeConfig = {
+        searchPseudoElements: true,
+      };
+
+      const registerBtns = document.querySelectorAll('a[href="#register"]');
+      const modal = document.querySelector('div[id="register"]');
+      const closeBtn = document.querySelector(".close-icon");
+
+      registerBtns.forEach((btn) => {
+        btn.addEventListener("click", (event) => {
+          event.preventDefault();
+          modal.classList.add("visible");
+        });
+      });
+
+      modal.addEventListener("click", (event) => {
+        if (event.target.classList.contains("visible"))
+          modal.classList.remove("visible");
+      });
+
+      closeBtn.addEventListener("click", (event) => {
+        if (modal.classList.contains("visible"))
+          modal.classList.remove("visible");
+      });
+
+      const registerBtn = document.querySelector(`a[href="/register.html"]`);
+
+      registerBtn.addEventListener("click", (event) => {
+        event.preventDefault();
+
+        const progressBar = event.target.closest("ul");
+        progressBar.classList.add("done");
+
+        const indicator = event.target.closest("li");
+        indicator.classList.add("complete");
+      });
+
+      const submitBtn = document.querySelector(`a[href="#register"]`);
+
+      submitBtn.addEventListener("click", (event) => {
+        event.preventDefault();
+
+        const progressBar = event.target.closest("ul");
+        progressBar.classList.add("final");
+
+        const indicator = event.target.closest("li");
+        indicator.classList.add("complete");
+      });
+    </script>
+  </body>
+</html>

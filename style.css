@@ -167,7 +167,7 @@ a {
 
 #about-us {
   min-height: 100vh;
-  padding-top: 14rem;
+  padding-top: 10rem;
   padding-bottom: 3rem;
   text-align: center;
   font-family: 'Google sans', sans-serif;
@@ -506,7 +506,7 @@ a {
   height: 640px;
   padding: 3rem 1rem;
 
-  background-color: #e4edfc;
+  background-color: #ffdba6;
 }
 
 .close-icon {
@@ -527,4 +527,129 @@ a {
 .visible {
   display: block;
   cursor: pointer;
+}
+
+#steps {
+  font-family: 'Google sans', sans-serif;
+  min-height: 100vh;
+  background-color: #d8d8d8;
+  padding: 1rem;
+}
+
+
+.step-container {
+  padding: 3rem;
+  max-width: 1080px;
+  background-color: #f8f8f8;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, .4);
+  margin: auto;
+  border-radius: 30px;
+}
+
+
+
+
+#steps .step-container>h1 {
+  font-size: 2.4rem;
+  color: #444;
+}
+
+
+
+#steps ul {
+  position: relative;
+  margin-top: 3rem;
+  padding-left: 2rem;
+}
+
+#steps ul::before,
+#steps ul::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 90%;
+  width: .4rem;
+  background-color: #bbe7fa;
+}
+
+#steps ul::after {
+  background-color: #bbe7fa;
+}
+
+#steps ul.done::after {
+  background-color: #29aee8;
+  height: 45%;
+}
+
+#steps ul.final::after {
+  background-color: #29aee8;
+  height: 90%;
+}
+
+@media (max-width:600px) {
+  .step-container {
+    padding: 1.6rem;
+  }
+
+  #steps .step-container>h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  #steps .step-container ul h1 {
+    font-size: 1.4rem;
+  }
+}
+
+#steps li {
+  position: relative;
+  list-style: none;
+  padding: 0 1rem;
+  margin-bottom: 3rem;
+}
+
+#steps li::after {
+  z-index: 3;
+  content: "\f00c";
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 600;
+  font-size: .8rem;
+  position: absolute;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  height: 1.5rem;
+  width: 1.5rem;
+  background-color: #bbe7fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #29aee8;
+  border: .25rem solid #f8f8f8;
+  transform: translate(-2.8rem, 0);
+}
+
+
+#steps li h1 {
+  margin-bottom: .5rem;
+  color: #101010;
+}
+
+#steps li p {
+  color: #444;
+  margin-bottom: 2rem;
+
+}
+
+#steps li .btn {
+  border-radius: 5px;
+  padding: .2rem .6rem;
+  font-size: .8rem;
+}
+
+#steps li.complete::after,
+#steps ul.final li::after {
+  background-color: #29aee8;
+  color: #f8f8f8;
 }

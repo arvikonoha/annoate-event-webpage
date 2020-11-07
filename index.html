@@ -7,16 +7,6 @@
     <title>Annotate</title>
   </head>
   <body>
-    <div id="register" class="modal">
-      <div class="frame-container">
-        <i class="fas fa-times-circle close-icon"></i>
-        <iframe
-          id="google-form"
-          src="https://bit.ly/3l53I9u"
-          frameborder="0"
-        ></iframe>
-      </div>
-    </div>
     <section class="flex-wrapper" id="main-links">
       <img
         width="50px"
@@ -72,7 +62,7 @@
           <p style="margin-bottom: 2rem; color: #444444">Phase One: Ideation</p>
         </hgroup>
         <div style="margin: auto">
-          <a href="#register" class="btn">Apply now</a>
+          <a target="_blank" href="/register.html" class="btn">Apply now</a>
           <img src="./button-pointer.svg" alt="" srcset="" />
           <a href="#about-us" class="btn btn-secondary">Read more</a>
         </div>
@@ -156,7 +146,11 @@
             </p>
           </li>
         </ol>
-        <a style="margin-top: 1rem" href="#register" class="btn"
+        <a
+          target="_blank"
+          style="margin-top: 1rem"
+          href="/register.html"
+          class="btn"
           >REGISTER NOW</a
         >
       </section>
@@ -186,21 +180,21 @@
               alt=""
             />
             <figcaption class="caption">
-              <span class="value">07</span>
+              <span id="days" class="value">07</span>
               <span class="label">Days</span>
             </figcaption>
           </figure>
           <figure>
             <img width="100%" src="./time-box.svg" alt="" />
             <figcaption class="caption">
-              <span class="value">12</span>
+              <span id="hours" class="value">12</span>
               <span class="label">Hours</span>
             </figcaption>
           </figure>
           <figure>
             <img width="100%" src="./time-box.svg" alt="" />
             <figcaption class="caption">
-              <span class="value">24</span>
+              <span id="mins" class="value">24</span>
               <span class="label">Minutes</span>
             </figcaption>
           </figure>
@@ -213,7 +207,7 @@
               alt=""
             />
             <figcaption class="caption">
-              <span class="value">22</span>
+              <span id="secs" class="value">22</span>
               <span class="label">Seconds</span>
             </figcaption>
           </figure>
@@ -232,7 +226,8 @@
               background-color: #444;
               border: #444 4px solid;
             "
-            href="#register"
+            target="_blank"
+            href="/register.html"
             class="btn"
             >REGISTER NOW</a
           >
@@ -240,7 +235,7 @@
       </section>
     </section>
     <section id="rules">
-      <h1>Rules <br />and regulations</h1>
+      <h1>General <br />Guidelines</h1>
       <ul>
         <li>
           <h1
@@ -297,26 +292,29 @@
       crossorigin="anonymous"
     ></script>
     <script>
-      const registerBtns = document.querySelectorAll('a[href="#register"]');
-      const modal = document.querySelector('div[id="register"]');
-      const closeBtn = document.querySelector(".close-icon");
+      const deadline = new Date("11/16/2020");
 
-      registerBtns.forEach((btn) => {
-        btn.addEventListener("click", (event) => {
-          event.preventDefault();
-          modal.classList.add("visible");
-        });
-      });
+      const timer = document.getElementById("timer");
+      const days = timer.querySelector("#days");
+      const hours = timer.querySelector("#hours");
+      const mins = timer.querySelector("#mins");
+      const secs = timer.querySelector("#secs");
+      setCurrentTime();
+      setInterval(setCurrentTime, 1000);
 
-      modal.addEventListener("click", (event) => {
-        if (event.target.classList.contains("visible"))
-          modal.classList.remove("visible");
-      });
+      function setCurrentTime() {
+        let timeInMilliSeconds = deadline - Date.now();
 
-      closeBtn.addEventListener("click", (event) => {
-        if (modal.classList.contains("visible"))
-          modal.classList.remove("visible");
-      });
+        let secval = timeInMilliSeconds / 1000;
+        let mval = secval / 60;
+        let hval = mval / 60;
+        let dval = hval / 24;
+
+        days.innerHTML = Math.floor(dval);
+        hours.innerHTML = Math.floor(hval % 24);
+        mins.innerHTML = Math.floor(mval % 60);
+        secs.innerHTML = Math.floor(secval % 60);
+      }
     </script>
   </body>
 </html>
