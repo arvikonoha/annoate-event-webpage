@@ -32,7 +32,11 @@
           <li class="step">
             <h1>Submission of idea</h1>
             <p>Submit your ideas by entering relavant details of the same.</p>
-            <a href="#register" class="btn invisible">SUBMIT</a>
+            <a href="#register" class="btn">SUBMIT</a>
+            <p class="error invisible">
+              Please register to the event at the Community page by pressing the
+              above link first
+            </p>
           </li>
           <li class="step">
             <h1>Fingers crossed</h1>
@@ -56,13 +60,6 @@
       const registerBtns = document.querySelectorAll('a[href="#register"]');
       const modal = document.querySelector('div[id="register"]');
       const closeBtn = document.querySelector(".close-icon");
-
-      registerBtns.forEach((btn) => {
-        btn.addEventListener("click", (event) => {
-          event.preventDefault();
-          modal.classList.add("visible");
-        });
-      });
 
       modal.addEventListener("click", (event) => {
         if (event.target.classList.contains("visible"))
@@ -94,10 +91,31 @@
         event.preventDefault();
 
         const progressBar = event.target.closest("ul");
-        progressBar.classList.add("final");
+        if (progressBar.classList.contains("done")) {
+          const progressBar = event.target.closest("ul");
+          progressBar.classList.add("final");
 
-        const indicator = event.target.closest("li");
-        indicator.classList.add("complete");
+          const indicator = event.target.closest("li");
+          indicator.classList.add("complete");
+        } else {
+          event.target.classList.add("error-btn");
+
+          const errorMessage = document.querySelector("p.error");
+          errorMessage.classList.remove("invisible");
+
+          setTimeout(() => {
+            event.target.classList.remove("error-btn");
+            errorMessage.classList.add("invisible");
+          }, 3000);
+        }
+      });
+
+      registerBtns.forEach((btn) => {
+        btn.addEventListener("click", (event) => {
+          event.preventDefault();
+          if (!event.target.classList.contains("error-btn"))
+            modal.classList.add("visible");
+        });
       });
     </script>
   </body>

@@ -466,10 +466,6 @@ a {
   border-right: solid 1px #fff;
 }
 
-.invisible {
-  display: none;
-}
-
 @media (max-width:1200px) {
 
   #footer {
@@ -608,6 +604,15 @@ a {
 #steps ul.final::after {
   background-color: #29aee8;
   height: 90%;
+}
+
+#steps ul p.error {
+  margin-top: .5rem;
+  color: #da5229;
+}
+
+.invisible {
+  display: none;
 }
 
 @media (max-width:600px) {
