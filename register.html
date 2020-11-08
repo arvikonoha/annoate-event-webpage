@@ -32,7 +32,7 @@
           <li class="step">
             <h1>Submission of idea</h1>
             <p>Submit your ideas by entering relavant details of the same.</p>
-            <a href="#register" class="btn">SUBMIT</a>
+            <a class="invisible" href="#register" class="btn">SUBMIT</a>
           </li>
           <li class="step">
             <h1>Fingers crossed</h1>
@@ -76,6 +76,8 @@
 
       const registerBtn = document.querySelector(`a[href="/register.html"]`);
 
+      const submitBtn = document.querySelector(`a[href="#register"]`);
+
       registerBtn.addEventListener("click", (event) => {
         event.preventDefault();
 
@@ -84,9 +86,9 @@
 
         const indicator = event.target.closest("li");
         indicator.classList.add("complete");
-      });
 
-      const submitBtn = document.querySelector(`a[href="#register"]`);
+        submitBtn.classList.remove("invisible");
+      });
 
       submitBtn.addEventListener("click", (event) => {
         event.preventDefault();
