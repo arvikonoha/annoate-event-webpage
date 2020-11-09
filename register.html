@@ -83,8 +83,6 @@
       const submitBtn = document.querySelector(`a[href="#register"]`);
 
       registerBtn.addEventListener("click", (event) => {
-        event.preventDefault();
-
         const progressBar = event.target.closest("ul");
         progressBar.classList.add("done");
 
