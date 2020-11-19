@@ -194,9 +194,9 @@
           how to implement it
         </p>
         <p style="font-size: 1rem; font-weight: bold">
-          <span style="font-size: 2rem">Last date to register</span>
+          <span style="font-size: 2rem">Results will be announced on</span>
           <br />
-          16th November
+          21st November at 11:45 PM
         </p>
         <div class="flex-wrapper" id="timer">
           <figure>
@@ -329,7 +329,8 @@
       crossorigin="anonymous"
     ></script>
     <script>
-      const deadline = new Date("11/17/2020");
+      let deadline = new Date("22/17/2020");
+      deadline = new Date(deadline-15*60*1000);
 
       const timer = document.getElementById("timer");
       const days = timer.querySelector("#days");
