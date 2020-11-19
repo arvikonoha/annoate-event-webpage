@@ -340,7 +340,7 @@
       setInterval(setCurrentTime, 1000);
 
       function setCurrentTime() {
-        let timeInMilliSeconds = deadline - Date.now();
+        let timeInMilliSeconds = (deadline - Date.now())>=0?(deadline - Date.now()):0;
 
         let secval = timeInMilliSeconds / 1000;
         let mval = secval / 60;
