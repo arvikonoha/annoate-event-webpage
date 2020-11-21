@@ -89,10 +89,10 @@
           <a href="#about-us" class="btn btn-secondary">Read more</a>
         </div>
       </div>
-      <a class="pendulam-vertical" style="margin: 1rem auto" href="#about-us">
+      <a class="pendulam-vertical" style="margin: 1rem auto" href="#results">
         <img src="./read more.svg" alt="" />
         <br />
-        <p style="font-weight: bold; color: #444">LEARN MORE</p>
+        <p style="font-weight: bold; color: #444">RESULTS</p>
       </a>
     </section>
     <section id="about-us">
@@ -177,13 +177,63 @@
           >REGISTER NOW</a
         >
       </section>
-      <a class="pendulam-vertical" style="margin-top: 2rem" href="#phases">
+      <a class="pendulam-vertical" style="margin-top: 2rem" href="#results">
         <img src="./read more.svg" alt="" />
         <br />
-        <p style="font-weight: bold; color: #444">iDEATE</p>
+        <p style="font-weight: bold; color: #444">RESULTS</p>
       </a>
     </section>
-    <section id="phases">
+    <section id="results">
+      <section class="winners">
+        <h1>Winners of iDeate</h1>
+        <p>
+          Congradulations to all the winners. And thank you everyone for
+          participating.
+        </p>
+        <ul>
+          <li>
+            <img
+              style="margin-bottom: 1rem"
+              width="64px"
+              src="./winner.svg"
+              alt=""
+            />
+            <div class="content">
+              <h1 style="color: #d6b625">Winner</h1>
+              <h1>Suyog B</h1>
+              <p>App of local stores</p>
+            </div>
+          </li>
+          <li>
+            <img
+              style="margin-bottom: 1rem"
+              width="64px"
+              src="./runner-up.svg"
+              alt=""
+            />
+            <div class="content">
+              <h1 style="color: #525252">Runner up</h1>
+              <h1>Shri Krishna</h1>
+              <p>Blockchain for agriculture</p>
+            </div>
+          </li>
+          <li>
+            <img
+              style="margin-bottom: 1rem"
+              width="64px"
+              src="./third.svg"
+              alt=""
+            />
+            <div class="content">
+              <h1 style="color: #5a1111cc">Third</h1>
+              <h1>Amogha Mayya</h1>
+              <p>Well Bee - A Smart Health App</p>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </section>
+    <section style="display: none" id="phases">
       <section class="phase">
         <img src="./ideation.jpg" alt="" />
         <h1>iDEATE.</h1>
@@ -328,31 +378,6 @@
       src="https://kit.fontawesome.com/4eec0e39bb.js"
       crossorigin="anonymous"
     ></script>
-    <script>
-      let deadline = new Date("11/22/2020");
-      deadline = new Date(deadline-15*60*1000);
-
-      const timer = document.getElementById("timer");
-      const days = timer.querySelector("#days");
-      const hours = timer.querySelector("#hours");
-      const mins = timer.querySelector("#mins");
-      const secs = timer.querySelector("#secs");
-      setCurrentTime();
-      setInterval(setCurrentTime, 1000);
-
-      function setCurrentTime() {
-        let timeInMilliSeconds = (deadline - Date.now())>=0?(deadline - Date.now()):0;
-
-        let secval = timeInMilliSeconds / 1000;
-        let mval = secval / 60;
-        let hval = mval / 60;
-        let dval = hval / 24;
-
-        days.innerHTML = Math.floor(dval);
-        hours.innerHTML = Math.floor(hval % 24);
-        mins.innerHTML = Math.floor(mval % 60);
-        secs.innerHTML = Math.floor(secval % 60);
-      }
-    </script>
+    <script src="confetti.js"></script>
   </body>
 </html>

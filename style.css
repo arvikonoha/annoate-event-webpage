@@ -681,3 +681,100 @@ a {
   background-color: #29aee8;
   color: #f8f8f8;
 }
+
+#results {
+  background-color: #bad5ff;
+  position: relative;
+  z-index: -3;
+  padding: 4rem 1rem;
+
+  font-family: 'Google sans', sans-serif;
+  text-align: center;
+  min-height: 720px;
+  border-bottom: 2px solid #10101034;
+  border-top: 2px solid #10101034;
+}
+
+
+#results .winners {
+  color: #101010;
+  padding: 1rem;
+}
+
+#results .winners>h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+#results .winners>p {
+  font-size: 1.2rem;
+  color: #101010a4;
+  margin-bottom: 5rem;
+}
+
+#results .winners>h2 {
+  font-size: 2rem;
+  margin-bottom: 4rem;
+}
+
+#results .winners ul li {
+  background-color: #fff;
+  position: relative;
+  text-align: left;
+  max-width: 640px;
+  margin: auto;
+  list-style: none;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  border: 1px solid #101010c7;
+  margin-bottom: 2rem;
+}
+
+#results .winners ul li::after {
+  content: '';
+  z-index: -1;
+  position: absolute;
+  width: 96%;
+  height: 100%;
+  bottom: -.6rem;
+  right: 2%;
+  border: 1px solid #101010c7;
+  background-color: #fff;
+}
+
+#results .winners ul li::before {
+  content: '';
+  z-index: -2;
+  position: absolute;
+  width: 92%;
+  height: 100%;
+  bottom: -1.2rem;
+  right: 4%;
+  border: 1px solid #101010c7;
+  background-color: #fff;
+}
+
+
+#results .winners ul li .content {
+  margin-left: 1rem;
+}
+
+#results .winners ul li h1:nth-child(2) {
+  font-size: 1.8rem;
+  margin-bottom: .2rem;
+}
+
+
+#results .winners ul li h1 {
+  font-size: 1.2rem;
+
+}
+
+#results .winners ul li p {
+  color: #303030;
+}
+
+#results .winners ul li h2 {
+  font-size: .8rem;
+}
