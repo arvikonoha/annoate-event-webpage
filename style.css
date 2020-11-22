@@ -48,7 +48,7 @@ a {
 
 #welcome {
   text-align: center;
-  min-height: 100vh;
+  min-height: 720px;
   background: url(./backimg.png) center center/contain no-repeat;
 }
 
@@ -166,7 +166,7 @@ a {
 }
 
 #about-us {
-  min-height: 100vh;
+  min-height: 720px;
   padding-top: 10rem;
   padding-bottom: 3rem;
   text-align: center;
@@ -683,18 +683,51 @@ a {
 }
 
 #results {
-  background-color: #303030;
+  background: linear-gradient(90deg, #303030 96px, transparent 1%) center,
+    linear-gradient(#303030 96px, transparent 1%) center, #d6b625;
+  background-size: 98px 98px;
+
+  /* background: url(./results-new.svg) center center/cover no-repeat; */
   position: relative;
   z-index: -3;
   padding: 4rem 1rem;
 
   font-family: 'Google sans', sans-serif;
 
-  min-height: 720px;
+  min-height: 820px;
   border-bottom: 2px solid #10101034;
   border-top: 2px solid #10101034;
 }
 
+#results img:first-child {
+  right: 12vw;
+}
+
+
+#results img:nth-child(2) {
+  left: 14vw;
+}
+
+@media (max-width:1300px) {
+
+  #results img:first-child {
+    right: 6vw;
+  }
+
+  #results img:nth-child(2) {
+    left: 8vw;
+  }
+}
+
+
+@media (max-width:900px) {
+
+  #results img:first-child,
+  #results img:nth-child(2) {
+    display: none;
+  }
+
+}
 
 #results .winners {
   max-width: 720px;
